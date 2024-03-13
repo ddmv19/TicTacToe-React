@@ -3,6 +3,7 @@ import { CircleIcon, CrossIcon, LogoGame, ResetIcon } from './components/Icons'
 import '@fontsource/kalam/700.css'
 import { Square } from './components/Square'
 import { checkWinner } from './utils/helpers'
+import { Modal } from './components/Modal'
 
 function App() {
   const [turn, setTurn] = useState('X')
@@ -64,6 +65,7 @@ function App() {
           />
         ))}
       </section>
+      <Modal winner={winner} resetBoard={resetBoard} />
     </main>
   )
 }
