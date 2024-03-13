@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { checkWinner } from '../utils/helpers'
 import { CircleIcon, CrossIcon } from './Icons'
 
 export const Square = ({ value, updateBoard, dataId }) => {
@@ -19,7 +17,7 @@ export const Square = ({ value, updateBoard, dataId }) => {
       ) : value === 'O' ? (
         <CircleIcon className={'w-16 h-auto text-slate-700'} />
       ) : (
-        ''
+        <span></span>
       )}
     </div>
   )
