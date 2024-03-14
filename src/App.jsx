@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { CircleIcon, CrossIcon, LogoGame, ResetIcon } from './components/Icons'
 import '@fontsource/kalam/700.css'
 import { Square } from './components/Square'
-import { checkWinner } from './utils/helpers'
+import { checkEndGame, checkWinner } from './utils/helpers'
 import { Modal } from './components/Modal'
+import confetti from 'canvas-confetti'
+import { useEffect } from 'react'
 
 function App() {
   const [turn, setTurn] = useState('X')
@@ -23,11 +25,17 @@ function App() {
       newBoard[index] = turn
       setBoard(newBoard)
       setTurn((prevTurn) => (prevTurn === 'X' ? 'O' : 'X'))
-      setWinner(checkWinner(newBoard))
-    } else {
-      return
+      const newWinner = checkWinner(newBoard)
+      const endGame = checkEndGame(newBoard)
+      if (newWinner) {
+        confetti()
+        setWinner(newWinner)
+      } else if (endGame) {
+        setWinner(false)
+      }
     }
   }
+
   return (
     <main className="border">
       <h1

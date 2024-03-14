@@ -2,8 +2,9 @@ import { CircleIcon, CrossIcon } from './Icons'
 
 export const Modal = ({ winner, resetBoard }) => {
   if (winner === null) return null
+
   const text = winner === false ? 'Empate' : 'Ganador'
-  const visibility = winner === false ? 'block' : 'hidden'
+  const visibility = winner === false || winner ? 'block' : 'hidden'
 
   const handleClick = () => {
     resetBoard()
