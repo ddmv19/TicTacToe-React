@@ -19,12 +19,16 @@ export const checkWinner = (board = []) => {
       if (
         board[first] &&
         board[first] === board[second] &&
-        board[second] === board[third]
+        board[first] === board[third]
       ) {
         return board[first]
       }
     }
   }
 
-  return false
+  return null
+}
+
+export const checkEndGame = (board = []) => {
+  return board.every((element) => element !== null)
 }
