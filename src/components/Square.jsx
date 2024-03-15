@@ -13,9 +13,9 @@ export const Square = ({ value, updateBoard, dataId }) => {
       onClick={handleClick}
     >
       {value === 'X' ? (
-        <CrossIcon className={'w-16 h-auto text-slate-700'} />
+        <CrossIcon className={'w-16 h-auto text-red-600 font-extrabold'} />
       ) : value === 'O' ? (
-        <CircleIcon className={'w-16 h-auto text-slate-700'} />
+        <CircleIcon className={'w-16 h-auto text-blue-600 font-extrabold'} />
       ) : (
         <span></span>
       )}
