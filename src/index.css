@@ -15,6 +15,10 @@ body {
   height: 100vh;
 }
 
+html.dark body {
+  background-color: #192a32;
+}
+
 :root {
   display: flex;
   flex-direction: col;
@@ -23,3 +27,81 @@ body {
   height: 100%;
   background-color: rgb(225, 229, 255);
 }
+
+.dark #root {
+  background-color: #192a32;
+}
+
+#turn {
+  box-shadow: 8px 10px 7px rgb(126, 195, 251);
+}
+
+.dark #turn {
+  box-shadow: 8px 10px 7px #10222b;
+}
+
+#reset {
+  box-shadow: 4px 8px 6px rgb(74, 172, 252);
+}
+
+.dark #reset {
+  box-shadow: 4px 8px 6px #6c8997;
+}
+
+#square {
+  box-shadow: 4px 8px 4px rgb(100, 100, 100);
+}
+
+.dark #square {
+  box-shadow: 4px 8px 4px #102129;
+}
+
+#change-theme ~ #checkbox-change-theme {
+  background-image: url('./assets/sun.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation-name: toLight;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+  box-shadow: 3px 3px 15px 6px rgb(255, 245, 62);
+}
+
+#change-theme:checked ~ #checkbox-change-theme {
+  background-image: url('./assets/moon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation-name: toDark;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+  box-shadow: 3px 3px 8px 6px rgb(46, 50, 149);
+}
+
+@keyframes toDark {
+  0% {
+    left: 8px;
+  }
+
+  100% {
+    left: 24px;
+  }
+}
+
+@keyframes toLight {
+  0% {
+    left: 24px;
+  }
+
+  100% {
+    left: 8px;
+  }
+}
+
+/* #checkbox-change-theme ~ #change-theme:checked {
+  background-image: url('./assets/moon.svg');
+} */
