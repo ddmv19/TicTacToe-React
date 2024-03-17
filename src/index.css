@@ -57,7 +57,7 @@ html.dark body {
 }
 
 #change-theme ~ #checkbox-change-theme {
-  background-image: url('./assets/sun.png');
+  background-image: url('/sun.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -70,7 +70,7 @@ html.dark body {
 }
 
 #change-theme:checked ~ #checkbox-change-theme {
-  background-image: url('./assets/moon.png');
+  background-image: url('/moon.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
