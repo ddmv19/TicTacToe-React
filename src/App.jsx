@@ -17,6 +17,7 @@ function App() {
   const resetBoard = () => {
     setBoard(Array(9).fill(null))
     setWinner(null)
+    setTurn('X')
   }
 
   const updateBoard = (index) => {
@@ -76,7 +77,7 @@ function App() {
           <ResetIcon className={'w-8 h-auto dark:text-[#243B45]'} />
         </div>
       </section>
-      <section className="w-fit max-w-[550px] m-auto flex flex-row gap-6 flex-wrap items-center justify-center mt-8 border border-black">
+      <section className="w-fit max-w-[550px] m-auto flex flex-row gap-6 flex-wrap items-center justify-center mt-8">
         {board.map((element, index) => (
           <Square
             value={element}
