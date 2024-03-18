@@ -1,4 +1,4 @@
-# <p align='center'>Tic Tac Toe + React</center>
+# <p align='center'>Tic Tac Toe + React</p>
 
 ![Imagén de la Aplicación](public/app.png)
 
